@@ -10,10 +10,17 @@ Spectral clustering exists because k-means assumes convex clusters in input spac
 The objective is to cut edges while keeping strongly connected nodes together → combinatorial problem<br>
 Since direct optimization is not feasible,  relax to a continuous problem<br>
 Spectral methods introduce eigenvectors of the graph Laplacian as the new representation<br>
-These eigenvectors define an embedding where proximity reflects graph connectivity not euclidean distance<br>
+These eigenvectors define an embedding where proximity reflects graph connectivity not euclidean distance<br><br>
+
+Intuition: <br>
+In graph Laplacian each point is a vertice and edges are defined from each point to other, encoding the strength of relation between them ( like springs )<br>
+So a strong edge (stiff spring) would signify two points (nodes) wanting the same value, Laplacian would be the measure of how much we are stretching the spring<br>
+Eigenvectors of the Laplacian assign coordinates to nodes such that connected nodes get similar coordinates, corresponding eigenvalue how much that assignment stretches the springs.<br>
+First eigenval is always 0 and vector is 1. Second smallest would reveal a soft indicator of a cut / an assignment with minimal resistance
+<br><br>
 k-means is then run in this embedded space where clusters are now separated linearly
 
-- Graph Laplacian eigenvectors never violate local connectivity but global optimum depends on scale parameters  
+- The Laplacian preserves local connectivity but what local means depends on $\sigma$ / $\epsilon$ / k
 - Makes scale sensitivity possible when $\sigma$ is too small all points disconnect, too large everything merges → clustering meaningless
 
 <br>
