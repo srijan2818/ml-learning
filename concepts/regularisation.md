@@ -163,7 +163,6 @@ Regularization is also essentially margin maximisation in a way.
 -  For linear classification :
   Margin ($\gamma$ = $\frac{1}{||w||}$)
    Maximizing margin  is equivalent to minimizing $||w||$.
--  Regularizing $||w||$ directly controls margin.
 -  SVM explicitly maximizes margin
 
 
