@@ -89,11 +89,11 @@ Gets superlinear convergence for smooth problems with low effective rank—each 
 
 ## INFORMATION GEOMETRY
 
-**Natural Gradient** replaces Euclidean parameter-space descent with descent in **probability distribution space** using the Fisher Information Matrix $F(w) = \mathbb{E}[\nabla \log p \, \nabla \log p^T]$ as the metric. This measures step size in KL-divergence units, aiming for parameterization invariance—in theory, reparameterizing coordinates shouldn't change the optimization trajectory in distribution space.
+**Natural Gradient** replaces Euclidean parameter-space descent with descent in **probability distribution space** using the Fisher Information Matrix $F(w) = \mathbb{E}[\nabla \log p \, \nabla \log p^T]$ as the metric. This measures step size in KL-divergence units, aiming for parameterization invariance— reparameterizing coordinates shouldn't change the optimization trajectory in distribution space.
 
 For probabilistic models with cross-entropy loss, Fisher is the expected Gauss-Newton matrix $F = \mathbb{E}[J^T J]$, always positive semidefinite. Eigenvalues reflect information content: high eigenvalue means parameter strongly affects the distribution. This addresses ill-conditioning from parameterization choices by rescaling according to information geometry.
 
-In practice however: empirical Fisher from mini-batches is noisy and doesn't equal true Fisher, destroying the theoretical invariance. Requires $O(d^2)$ storage so practical methods use approximations (K-FAC for Kronecker-factored blocks, block-diagonal structure). Most relevant for models outputting distributions—classification, generative models, RL policies. For deterministic regression Fisher reduces to scaled Hessian with less benefit.
+In practice : empirical Fisher from mini-batches is noisy and doesn't equal true Fisher, destroying the theoretical invariance. Requires $O(d^2)$ storage so practical methods use approximations (K-FAC for Kronecker-factored blocks, block-diagonal structure). Most relevant for models outputting distributions—classification, generative models, RL policies. For deterministic regression Fisher reduces to scaled Hessian with less benefit.
 ## **When to Use What**
 
 **Deterministic convex smooth problems** (small-scale optimization, final refinement):

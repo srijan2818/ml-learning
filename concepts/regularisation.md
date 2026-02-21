@@ -102,7 +102,8 @@ Stopping at iteration $T$ is equivalent to $\ell_2$ regularization with time-var
 Randomly drops neurons (sets activations to 0) with probability $p$ during training.
 
 - Implicit effect: Trains $2^n$ subnetworks (where $n$ = number of neurons)
-- At test time: Use full network with scaled weights (multiply by $1-p$)
+- At test time: Use full network with scaled weights (multiply by $1-p$)  
+- Inverted Dropout : Scale the activations up during training (divide by $1-p$) during training instead of test time.
 - Prevents co-adaptation — forces each neuron to be useful independently
 - Adaptive $\ell_2$ penalty on weights (approximate, not exact)
 
