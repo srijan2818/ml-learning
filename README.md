@@ -28,3 +28,7 @@ The purpose is to record and verify understanding, not to optimize performance, 
 - Spectral Clustering (graph Laplacian, eigen-embedding)
 - Gaussian Mixture Model (EM – structural understanding)
 - Optimization Layers (GD → Natural Gradient)
+
+## Neural Networks / PyTorch
+- Simple MLP and optimization experiments (PyTorch)
+- CNN and Deep CNN on MNIST (PyTorch)
