@@ -1,6 +1,6 @@
 # Machine Learning Algorithms
 
-This repository contains from-scratch implementations of machine learning algorithms written by directly translating mathematical definitions into code.
+This repository contains basic implementations of machine learning algorithms for learning purposes.
 
 The purpose is to record and verify understanding, not to optimize performance, provide abstractions, or compete with existing libraries.
 
